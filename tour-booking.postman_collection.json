@@ -1,0 +1,876 @@
+{
+	"info": {
+		"_postman_id": "1394ac77-da69-4669-a3dd-fe217783f4f7",
+		"name": "tour-booking",
+		"description": "database name",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24065022"
+	},
+	"item": [
+		{
+			"name": "homestays",
+			"item": [
+				{
+					"name": "create homestay",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"balii\",\r\n    \"city\": \"bali\",\r\n    \"price\": 99000,\r\n    \"maxGroupSize\": 8,\r\n    \"desc\": \"this is the description\",\r\n    \"reviews\": [],\r\n    \"photo\": \"/tour-images/tour-img04.jpg\",\r\n    \"featured\": false\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/Homestay",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"Homestay"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update homestay",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\" : \"balihoo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/homestay/6482ef4f2b5cc5b6c497d2a8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"homestay",
+								"6482ef4f2b5cc5b6c497d2a8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete homestay",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/homestay/6482ef4f2b5cc5b6c497d2a8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"homestay",
+								"6482ef4f2b5cc5b6c497d2a8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get single homestay",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/v1/Homestay/6482320122afd4758dab973c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"Homestay",
+								"6482320122afd4758dab973c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all homestays",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/v1/homestay",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"homestay"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get homestay by search",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/v1/homestay/search/getHomeStayBySearch?city=london&maxGroupSize=5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"homestay",
+								"search",
+								"getHomeStayBySearch"
+							],
+							"query": [
+								{
+									"key": "city",
+									"value": "london"
+								},
+								{
+									"key": "maxGroupSize",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get featured homestays",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/v1/homestay/search/getFeaturedHomestays",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"homestay",
+								"search",
+								"getFeaturedHomestays"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get homestay count",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/v1/homestay/search/getHomeStayCount",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"homestay",
+								"search",
+								"getHomeStayCount"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "table name"
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "post register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\" :\"sipalingtest\",\r\n    \"email\":\"sipalingtest@gmail.com\",\r\n    \"password\":\"sipalingtest123\",\r\n    \"tgllahir\":\"19991112\",\r\n    \"nohp\":\"08122123622\",\r\n    \"role\":\"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "post login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// admin\r\n{\r\n    \"email\" : \"sipalingtest@gmail.com\",\r\n    \"password\" : \"sipalingtest123\"\r\n}\r\n\r\n// user\r\n// {\r\n//     \"email\" : \"siusernih@gmail.co.id\",\r\n//     \"password\" : \"siusernih012\"\r\n// }\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/v1/users/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get single user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/v1/users/64760f18e28cb12e05d9d7ee",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"64760f18e28cb12e05d9d7ee"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "table name"
+		},
+		{
+			"name": "reviews",
+			"item": [
+				{
+					"name": "create review",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"wikwok\",\r\n    \"reviewText\":\"ih krenn sihh\",\r\n    \"rating\":4.1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/review/6482ef4f2b5cc5b6c497d2a8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"review",
+								"6482ef4f2b5cc5b6c497d2a8"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "table name"
+		},
+		{
+			"name": "bookings",
+			"item": [
+				{
+					"name": "create booking",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"homestayName\":\"bali\",\r\n    \"namalengkap\":\"kobarrr ajadeh\",\r\n    \"kapasitas\":2,\r\n    \"notel\":812313221,\r\n    \"tglpesan\" :\"2023-11-01\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/booking",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"booking"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get by id booking",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/v1/booking/64784bc240a23d0cc53cb800",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"booking",
+								"64784bc240a23d0cc53cb800"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all bookings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/v1/booking/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"booking",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "tourguides",
+			"item": [
+				{
+					"name": "Create tourguide",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\" : \"Tukul\",\r\n    \"city\" : \"banyuwangi\",\r\n    \"desc\" : \"awikwokawikwok\",\r\n    \"local_price\" : 90000,\r\n    \"inter_price\" : 100000,\r\n    \"language\" : \"inggris , Jepang\",\r\n    \"reviews\" : [],\r\n    \"photo\" : \"/tour-images/tour-img01.jpg\",\r\n    \"featured\" : \"true\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/tourguide",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"tourguide"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update tourguide",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\" : \"siudin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/tourguide/648956cc3cda5e2800569477",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"tourguide",
+								"648956cc3cda5e2800569477"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete tourguide",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/v1/tourguide/648706ec9719404af4bcb043",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"tourguide",
+								"648706ec9719404af4bcb043"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get single tourguide",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/v1/tourguide/648706ec9719404af4bcb043",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"tourguide",
+								"648706ec9719404af4bcb043"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all tourguide",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/v1/tourguide/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"tourguide",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Featured tour guide",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/v1/tourguide/search/getFeaturedtourguide",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"tourguide",
+								"search",
+								"getFeaturedtourguide"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Tour Guide Count",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/v1/TourGuide/search/getTourGuideCount",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"TourGuide",
+								"search",
+								"getTourGuideCount"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Tour Guide By Search",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/v1/tourguide/search/getTourGuideBySearch?kota=Banyuwangi",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"tourguide",
+								"search",
+								"getTourGuideBySearch"
+							],
+							"query": [
+								{
+									"key": "maksOrang",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "kota",
+									"value": "Banyuwangi"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "table name"
+		},
+		{
+			"name": "destination",
+			"item": [
+				{
+					"name": "Create destination",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\" : \"nyenyenyenye\",\r\n    \"city\" : \"bali\",\r\n    \"desc\" : \"awikwokawikwok\",\r\n    \"local_price\" : 90000,\r\n    \"inter_price\" : 100000,\r\n    \"photo\" : \"/tour-images/tour-img01.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/destination",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"destination"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update destination",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"city\" : \"denpasar\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/v1/destination/6487ee237e045c0de4cfad32",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"destination",
+								"6487ee237e045c0de4cfad32"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete destination",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/v1/destination/6487ee237e045c0de4cfad32",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"destination",
+								"6487ee237e045c0de4cfad32"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get destination count",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/v1/destination/search/getDestinationCount/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"destination",
+								"search",
+								"getDestinationCount",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all destination",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/v1/destination/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"destination",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get single destination",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/v1/destination/6487e8c9222365ddb02f6b7e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"destination",
+								"6487e8c9222365ddb02f6b7e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get destination count",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/v1/destination/search/getDestinationCount",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"destination",
+								"search",
+								"getDestinationCount"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Destination by Search",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/api/v1/destination/search/getDestinationBySearch?city=denpasar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"v1",
+								"destination",
+								"search",
+								"getDestinationBySearch"
+							],
+							"query": [
+								{
+									"key": "city",
+									"value": "denpasar"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "table name"
+		}
+	]
+}
